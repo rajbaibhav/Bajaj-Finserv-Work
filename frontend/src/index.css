@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-darkbg text-gray-300 font-sans transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-wide text-white;
+  }
+}
+
+.bold-panel {
+  @apply bg-darkcard border border-darkborder shadow-lg rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/50;
+}
+
+.primary-btn {
+  @apply bg-primary hover:bg-[#fb923c] text-white font-bold rounded-xl py-3 px-5 shadow-lg hover:shadow-xl transition-all transform active:scale-95 flex items-center justify-center gap-2;
+}
+
+.secondary-btn {
+  @apply bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-black font-bold rounded-xl py-3 px-5 transition-all transform active:scale-95 flex items-center justify-center gap-2;
+}
+
+.action-btn {
+  @apply px-4 py-2 bg-darkcard hover:bg-[#2a2a2a] border border-darkborder rounded-xl transition-all duration-200 shadow hover:shadow-md active:scale-95 text-gray-300 hover:text-white flex items-center gap-2;
+}
+
+.dark-input {
+  @apply w-full bg-[#161616] border border-darkborder rounded-xl p-5 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-mono text-lg text-gray-200 placeholder-gray-600;
+}
