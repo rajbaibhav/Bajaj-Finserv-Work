@@ -4,15 +4,14 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const bfhlRoutes = require('./routes/bfhlRoutes');
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
 
-// CORS Configuration
+
 const corsOptions = {
     origin: function (origin, callback) {
-        // Allow all origins
+
         callback(null, true);
     },
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -21,17 +20,17 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization']
 };
 
-// Middleware
+
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Connect to MongoDB
+
 connectDB();
 
-// Routes
+
 app.use('/bfhl', bfhlRoutes);
 
-// Base route for health check
+
 app.get('/', (req, res) => {
     res.send('BFHL API is running');
 });
