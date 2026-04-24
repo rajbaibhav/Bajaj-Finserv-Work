@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://bajaj-bfhl-api-gxt3.onrender.com/';
+const API_URL = 'https://bajaj-bfhl-api-gxt3.onrender.com';
 
 export const processGraphData = async (dataArray) => {
     try {

@@ -9,8 +9,20 @@ dotenv.config();
 
 const app = express();
 
+// CORS Configuration
+const corsOptions = {
+    origin: function (origin, callback) {
+        // Allow all origins
+        callback(null, true);
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true,
+    optionsSuccessStatus: 200,
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Connect to MongoDB
